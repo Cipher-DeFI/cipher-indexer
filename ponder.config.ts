@@ -1,20 +1,24 @@
 import { createConfig } from "ponder";
-
-import { ExampleContractAbi } from "./abis/ExampleContractAbi";
+import { http } from "viem";
+import { FUMVaultAbi } from "./abis/FumVaultAbi";
 
 export default createConfig({
   chains: {
-    mainnet: {
-      id: 1,
-      rpc: process.env.PONDER_RPC_URL_1!,
+    avalanche: {
+      id: 43113,
+      rpc: http("https://api.avax-test.network/ext/bc/C/rpc"),
     },
   },
   contracts: {
-    ExampleContract: {
-      chain: "mainnet",
-      abi: ExampleContractAbi,
-      address: "0x0000000000000000000000000000000000000000",
-      startBlock: 1234567,
+    FUMVault: {
+      abi: FUMVaultAbi,
+      chain: "avalanche",
+      address: "0x7Aa2608EeA7679FA66196DECd78989Bb13DACD38",
+      startBlock: 42606732,
     },
   },
+  database: {
+    kind: "postgres",
+    connectionString: process.env.DATABASE_URL,
+  }
 });
