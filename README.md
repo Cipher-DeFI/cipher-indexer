@@ -46,7 +46,7 @@ This project indexes Cipher Vault smart contracts on the Avalanche testnet, prov
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd fum-vault-indexer
+   cd cipher-indexer
    ```
 
 2. **Install dependencies**
