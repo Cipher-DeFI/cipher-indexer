@@ -1,6 +1,6 @@
 import { createConfig } from "ponder";
 import { http } from "viem";
-import { FUMVaultAbi } from "./abis/FumVaultAbi";
+import { CipherVaultAbi } from "./abis/CipherVaultAbi";
 
 export default createConfig({
   chains: {
@@ -10,8 +10,8 @@ export default createConfig({
     },
   },
   contracts: {
-    FUMVault: {
-      abi: FUMVaultAbi,
+    CipherVault: {
+      abi: CipherVaultAbi,
       chain: "avalanche",
       address: "0x7Aa2608EeA7679FA66196DECd78989Bb13DACD38",
       startBlock: 42606732,

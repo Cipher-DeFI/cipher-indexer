@@ -1,10 +1,10 @@
-# FUM Vault Indexer
+# Cipher Vault Indexer
 
-A blockchain indexer for FUM Vault smart contracts built with Ponder, featuring AI insights and a RESTful API.
+A blockchain indexer for Cipher Vault smart contracts built with Ponder, featuring AI insights and a RESTful API.
 
 ## 🚀 Overview
 
-This project indexes FUM Vault smart contracts on the Avalanche testnet, providing real-time data about vaults, user statistics, and AI-powered insights. The system consists of:
+This project indexes Cipher Vault smart contracts on the Avalanche testnet, providing real-time data about vaults, user statistics, and AI-powered insights. The system consists of:
 
 - **Ponder Indexer**: Indexes onchain vault data and user statistics
 - **Custom AI Insights**: Separate database for AI-generated insights about vaults
@@ -213,8 +213,8 @@ export default createConfig({
     },
   },
   contracts: {
-    FUMVault: {
-      abi: FUMVaultAbi,
+    CipherVault: {
+      abi: CipherVaultAbi,
       chain: "avalanche",
       address: "0x7Aa2608EeA7679FA66196DECd78989Bb13DACD38",
       startBlock: 42606732,
@@ -248,7 +248,7 @@ pnpm codegen
 ### Project Structure
 
 ```
-fum-vault-indexer/
+cipher-vault-indexer/
 ├── abis/                 # Smart contract ABIs
 ├── src/
 │   ├── api/             # REST API endpoints
