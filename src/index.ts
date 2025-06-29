@@ -1,7 +1,7 @@
 import { ponder } from "ponder:registry";
 import { vault, userStats, VaultStatus } from "ponder:schema";
 
-ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
+ponder.on("CipherVault:VaultCreated", async ({ event, context }) => {
     const { vaultId, owner, token, amount, conditionType, unlockTime, targetPrice, priceUp, priceDown, title, message } = event.args;
   
     await context.db
@@ -45,7 +45,7 @@ ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
       }));
   });
   
-  ponder.on("FUMVault:VaultUnlocked", async ({ event, context }) => {
+  ponder.on("CipherVault:VaultUnlocked", async ({ event, context }) => {
     const { vaultId } = event.args;
   
     const vaultRecord = await context.db
@@ -70,7 +70,7 @@ ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
       }));
   });
   
-  ponder.on("FUMVault:VaultWithdrawn", async ({ event, context }) => {
+  ponder.on("CipherVault:VaultWithdrawn", async ({ event, context }) => {
     const { vaultId, owner, amount } = event.args;
   
     await context.db
@@ -90,7 +90,7 @@ ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
       }));
   });
   
-  ponder.on("FUMVault:VaultAutoWithdrawn", async ({ event, context }) => {
+  ponder.on("CipherVault:VaultAutoWithdrawn", async ({ event, context }) => {
     const { vaultId, owner, amount } = event.args;
   
     await context.db
@@ -110,7 +110,7 @@ ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
       }));
   });
   
-  ponder.on("FUMVault:EmergencyExecuted", async ({ event, context }) => {
+  ponder.on("CipherVault:EmergencyExecuted", async ({ event, context }) => {
     const { vaultId, owner, amount, penalty } = event.args;
   
     await context.db
@@ -133,7 +133,7 @@ ponder.on("FUMVault:VaultCreated", async ({ event, context }) => {
       }));
   });
   
-  ponder.on("FUMVault:VaultAutoWithdrawUpdated", async ({ event, context }) => {
+  ponder.on("CipherVault:VaultAutoWithdrawUpdated", async ({ event, context }) => {
     const { vaultId, autoWithdraw } = event.args;
   
     await context.db
